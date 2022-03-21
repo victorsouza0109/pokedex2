@@ -1,0 +1,8 @@
+<h1>Pokedex</h1>
+<div class="rowCard">
+    <div *ngFor="let pokemon of pokes" class="card">
+        <p>{{pokemon?.name}}</p>
+        <p>{{pokemon?.details?.id}}</p>
+        <img src='{{pokemon?.details?.sprites.front_default}}' alt="">
+    </div>
+</div> 

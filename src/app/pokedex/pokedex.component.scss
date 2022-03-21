@@ -1,0 +1,13 @@
+.rowCard{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    div{
+        background-color: #e5e5e5;
+        width: 200px;
+        height: 200px;
+        border: solid rgb(60, 60, 80) .1px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+}
