@@ -1,8 +1,15 @@
-<h1>Pokedex</h1>
-<div class="rowCard">
-    <div *ngFor="let pokemon of pokes" class="card">
-        <p>{{pokemon?.name}}</p>
-        <p>{{pokemon?.details?.id}}</p>
-        <img src='{{pokemon?.details?.sprites.front_default}}' alt="">
+<div class="container">
+    <h1>Pokedex</h1>
+    <input type="text" [(ngModel)]="filterPokes" (keyup)='filter()'>
+    <div class="col-md-12 row">
+        <div *ngFor="let pokemon of filteredPokes" class="cards">
+            <img [attr.src]="getImgUrl(pokemon?.details?.id)" alt="{{pokemon?.name}}"><!-- 
+            <img src="{{pokemon?.details?.sprites?.front_default}}" alt=""> -->
+            <p>Nº {{pokemon?.details?.id}}</p>
+            <p>{{pokemon?.name}}</p>
+            <div class="type">
+                <p *ngFor="let pokeType of pokemon?.details?.types">{{pokeType.type.name}}</p>
+            </div>
+        </div>
     </div>
-</div> 
+</div>
