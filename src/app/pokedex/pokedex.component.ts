@@ -11,6 +11,9 @@ export class PokedexComponent implements OnInit {
   filteredPokes: any[] = [];
   filterPokes='';
   url:any = [];
+  countPreviousPokes = 0;
+  previousPokesPage = 0;
+
   constructor(private PokemonsService: PokemonsService) { }
 
   async ngOnInit() {
