@@ -23,8 +23,19 @@ export class PokedexComponent implements OnInit {
     this.pokes = response.results;
     for(let poke of this.pokes){
       poke.details = await this.PokemonsService.getPokemon(poke.url);
+      poke.id = this.getId(poke.details.id)
       /* poke.urlImg = this.getImgUrl(poke.details.id)*/
     }
+  }
+  getId(id:any){
+    if(id < 10){
+      id = '00'+id
+    }else if(id < 100){
+      id = '0'+id
+    }else if(id >= 100){
+      id = ('000' + id).slice(-3);
+    }
+    return id
   }
   getImgUrl(id:any){
     if(id < 10){

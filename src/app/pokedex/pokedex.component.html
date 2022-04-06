@@ -5,7 +5,7 @@
         <div *ngFor="let pokemon of filteredPokes" class="cards">
             <img [attr.src]="getImgUrl(pokemon?.details?.id)" alt="{{pokemon?.name}}"><!-- 
             <img src="{{pokemon?.details?.sprites?.front_default}}" alt=""> -->
-            <p>Nº {{pokemon?.details?.id}}</p>
+            <p>Nº {{pokemon?.id}}</p>
             <p>{{pokemon?.name}}</p>
             <div class="type">
                 <p *ngFor="let pokeType of pokemon?.details?.types">{{pokeType.type.name}}</p>
