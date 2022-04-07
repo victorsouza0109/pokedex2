@@ -7,10 +7,10 @@ import { PokemonsService } from '../services/pokemons.service';
   styleUrls: ['./pokedex.component.scss']
 })
 export class PokedexComponent implements OnInit {
-  pokes:any = [];
+  pokes: any = [];
   filteredPokes: any[] = [];
-  filterPokes='';
-  url:any = [];
+  filterPokes = '';
+  url: any = [];
   countPreviousPokes = 0;
   previousPokesPage = 0;
 
@@ -21,42 +21,49 @@ export class PokedexComponent implements OnInit {
     this.filteredPokes = [...this.pokes];
     console.log(this.filteredPokes)
   }
-  async listarPokes(){
+  async listarPokes() {
     let response = await this.PokemonsService.listarPokemons();
     this.pokes = response.results;
-    for(let poke of this.pokes){
+    for (let poke of this.pokes) {
       poke.details = await this.PokemonsService.getPokemon(poke.url);
       poke.id = this.getId(poke.details.id)
-      /* poke.urlImg = this.getImgUrl(poke.details.id)*/
+      for (var i = 0; i < poke.details.types.length; i++) {
+        poke.details.types[i].type.name= this.toUpperCase(poke.details.types[i].type.name)
+      }
     }
   }
-  getId(id:any){
-    if(id < 10){
-      id = '00'+id
-    }else if(id < 100){
-      id = '0'+id
-    }else if(id >= 100){
+  getId(id: any) {
+    if (id < 10) {
+      id = '00' + id
+    } else if (id < 100) {
+      id = '0' + id
+    } else if (id >= 100) {
       id = ('000' + id).slice(-3);
     }
     return id
   }
-  getImgUrl(id:any){
-    if(id < 10){
-      id = '00'+id
-    }else if(id < 100){
-      id = '0'+id
-    }else if(id >= 100){
+  getImgUrl(id: any) {
+    if (id < 10) {
+      id = '00' + id
+    } else if (id < 100) {
+      id = '0' + id
+    } else if (id >= 100) {
       id = ('000' + id).slice(-3);
     }
     return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png`
   }
+
+  toUpperCase(type: string) {
+    return type.charAt(0).toUpperCase() + type.substr(1);
+  }
+
   filter() {
     if (!this.filterPokes) {
       this.filteredPokes = [...this.pokes];
-    }else {
+    } else {
       this.filteredPokes = this.pokes.filter((data: any) => {
-       return data.name.toLowerCase().includes(this.filterPokes.toLowerCase())
-    })
+        return data.name.toLowerCase().includes(this.filterPokes.toLowerCase())
+      })
     }
   }
 }

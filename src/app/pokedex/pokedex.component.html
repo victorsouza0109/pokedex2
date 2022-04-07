@@ -1,15 +1,21 @@
 <div class="container">
-    <h1>Pokedex</h1>
-    <input type="text" [(ngModel)]="filterPokes" (keyup)='filter()'>
-    <div class="col-md-12 row">
+    <div class="input">
+        <h1>Pokedex</h1>
+        <input type="text" [(ngModel)]="filterPokes" (keyup)='filter()'>
+    </div>
+    <div class="col-md-12 row alingItens">
         <div *ngFor="let pokemon of filteredPokes" class="cards">
             <div class="img">
                 <img [attr.src]="getImgUrl(pokemon?.details?.id)" alt="{{pokemon?.name}}">
             </div>
-            <p class="number">Nº{{pokemon?.id}}</p>
-            <p class="name">{{pokemon?.name}}</p>
-            <div class="type">
-                <p *ngFor="let pokeType of pokemon?.details?.types" ngClass="{{pokeType.type.name}} ? 'fire' : 'water' : 'grass' : 'poison' : 'flyning' : 'bug' : 'electric' : 'normal' ">{{pokeType.type.name}}</p>
+            <div class="content">
+                <p class="number">Nº{{pokemon?.id}}</p>
+                <p class="name">{{pokemon?.name}}</p>
+                <div class="type">
+                    <p *ngFor="let pokeType of pokemon?.details?.types" ngClass="{{pokeType.type.name}}">
+                        {{pokeType.type.name}}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

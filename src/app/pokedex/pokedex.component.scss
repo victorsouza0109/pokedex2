@@ -6,19 +6,24 @@
     border-radius: 10px;
     cursor: pointer;
     padding: 0px;
-    p{
-        font-family: "Flexo-Bold",arial,sans-serif;
+
+    p {
+        font-family: "Flexo-Bold", arial, sans-serif;
     }
 }
-.img{
+
+.img {
     background-color: #f2f2f2fe;
 }
-.number{
+
+.number {
     color: #919191;
 }
-.name{
+
+.name {
     font-size: 20px;
 }
+
 .cards:hover {
     top: -4px;
     transition: all .2s ease-in-out
@@ -27,36 +32,115 @@
 .type {
     display: flex;
     text-align: center;
+
     p {
-        width:80px;
+        width: 80px;
         padding: 5px 10px;
-        border: solid 1px green;
     }
-    p:first-child{
+
+    p:first-child {
         margin-right: 10px;
     }
 }
-.fire{
-    background-color: red;
+
+.content {
+    padding-left: 20px;
 }
-.water{
-    background-color: blue;
+
+.alingItens {
+    display: flex;
+    justify-content: center;
 }
-.grass{
-    background-color: green;
+
+.input {
+    margin-left: 7%;
 }
-.poison{
-    background-color: purple;
+
+.Fire {
+    background-image: linear-gradient(#fd7d24fe, #ac5110fe);
+    color: #fff;
 }
-.flying{
+
+.Water {
+    background-image: linear-gradient(#4491c3fe, #245779fe);
+    color: #fff;
+}
+
+.Grass {
+    background-image: linear-gradient(#9bcc50fe, #618034fe);
+    color: #fff;
+}
+
+.Poison {
+    background-image: linear-gradient(#b97fc9fe, #5a3d63fe);
+    color: #fff;
+}
+
+.Flying {
     background-image: linear-gradient(#3dc7effe, #bdb9b8fe);
 }
-.bug{
-    background-color: #729f3ffe;
+
+.Bug {
+    background-image: linear-gradient(#729f3ffe, #476425fe);
+    color: #fff;
 }
-.normal{
-    background-color: #a4acaffe;
+
+.Normal {
+    background-image: linear-gradient(#a4acaffe, #2a2b2cfe);
+    color: #fff;
 }
-.electric{
-    background-color: #eed535fe;
+
+.Electric {
+    background-image: linear-gradient(#eed535fe, #665b0afe);
+    color: #fff;
+}
+
+.Ground {
+    background-image: linear-gradient(#f7de3ffe, #ab9842fe);
+    color: #fff;
+}
+
+.Fairy {
+    background-image: linear-gradient(#fdb9e9fe, #724e67fe);
+    color: #fff;
+}
+
+.Psychic {
+    background-image: linear-gradient(#f366b9fe, #852d61fe);
+    color: #fff;
+}
+
+.Fighting {
+    background-image: linear-gradient(#d56723fe, #552e16fe);
+    color: #fff;
+}
+
+.Rock {
+    background-image: linear-gradient(#a38c21fe, #3b361cfe);
+    color: #fff;
+}
+
+.Steel {
+    background-image: linear-gradient(#9eb7b8fe, #455455fe);
+    color: #fff;
+}
+
+.Ice {
+    background-image: linear-gradient(#51c4e7fe, #286375fe);
+    color: #fff;
+}
+
+.Ghost {
+    background-image: linear-gradient(#7b61a2fe, #1a171ffe);
+    color: #fff;
+}
+
+.Dragon {
+    background-image: linear-gradient(#53a4cffe, #f16e57fe);
+    color: #fff;
+}
+
+.Dark {
+    background-image: linear-gradient(#707070fe, #333030fe);
+    color: #fff;
 }
