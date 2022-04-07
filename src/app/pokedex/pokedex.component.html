@@ -3,20 +3,29 @@
         <h1>Pokedex</h1>
         <input type="text" [(ngModel)]="filterPokes" (keyup)='filter()'>
     </div>
-    <div class="col-md-12 row alingItens">
-        <div *ngFor="let pokemon of filteredPokes" class="cards">
-            <div class="img">
-                <img [attr.src]="getImgUrl(pokemon?.details?.id)" alt="{{pokemon?.name}}">
-            </div>
-            <div class="content">
-                <p class="number">Nº{{pokemon?.id}}</p>
-                <p class="name">{{pokemon?.name}}</p>
-                <div class="type">
-                    <p *ngFor="let pokeType of pokemon?.details?.types" ngClass="{{pokeType.type.name}}">
-                        {{pokeType.type.name}}
-                    </p>
+    <div infiniteScroll [infiniteScrollDistance]="0" (scrolled)="onScroll()">
+        <div class="col-md-12 row">
+            <div *ngFor="let pokemon of filteredPokes" class="cards">
+                <div class="img">
+                    <img [attr.src]="getImgUrl(pokemon?.details?.id)" alt="{{pokemon?.name}}">
+                </div>
+                <div class="content">
+                    <p class="number">Nº{{pokemon?.id}}</p>
+                    <p class="name">{{pokemon?.name}}</p>
+                    <div class="type">
+                        <p *ngFor="let pokeType of pokemon?.details?.types" ngClass="{{pokeType.type.name}}">
+                            {{pokeType.type.name}}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+   <!--  <div class="row pb-5">
+        <div class="col-md-12 p-5">
+            <ngx-spinner bdOpacity=0.9 bdColor="" size="default" color="#581f87" type="ball-pulse-sync"
+                [fullScreen]="false">
+            </ngx-spinner>
+        </div>
+    </div> -->
 </div>

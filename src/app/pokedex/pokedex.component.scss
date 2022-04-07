@@ -1,15 +1,21 @@
 .cards {
     position: relative;
-    width: 220px;
+    max-width: 220px;
     height: auto;
     margin: 10px;
     border-radius: 10px;
     cursor: pointer;
     padding: 0px;
-
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     p {
         font-family: "Flexo-Bold", arial, sans-serif;
     }
+    img{
+        width: 100%;
+    }
+}
+.cards:nth-child(4n+1){
+    margin-left: 8%;
 }
 
 .img {
@@ -22,6 +28,7 @@
 
 .name {
     font-size: 20px;
+    font-family: "Flexo-Bold", arial, sans-serif;
 }
 
 .cards:hover {
@@ -36,6 +43,7 @@
     p {
         width: 80px;
         padding: 5px 10px;
+        font-family: "Flexo-Bold", arial, sans-serif;
     }
 
     p:first-child {
@@ -45,13 +53,9 @@
 
 .content {
     padding-left: 20px;
+    padding-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-
-.alingItens {
-    display: flex;
-    justify-content: center;
-}
-
 .input {
     margin-left: 7%;
 }
