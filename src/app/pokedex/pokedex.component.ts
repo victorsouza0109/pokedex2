@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from '../services/pokemons.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -14,7 +16,9 @@ export class PokedexComponent implements OnInit {
   filterPokes = '';
   url: any = [];
 
-  constructor(private PokemonsService: PokemonsService, private spinner: NgxSpinnerService) { }
+  constructor(private PokemonsService: PokemonsService, private spinner: NgxSpinnerService,
+    private router: Router
+  ) { }
 
   async ngOnInit() {
     await this.listarPokes();
@@ -99,8 +103,8 @@ export class PokedexComponent implements OnInit {
       pokemon = pokemon.concat(pokemonAfter)
       this.pokes = pokemon
       this.filteredPokes = this.pokes;
-      console.log(this.pokes.length )
-    }else if(this.pokes.length = 888){
+      console.log(this.pokes.length)
+    } else if (this.pokes.length = 888) {
       let response = await this.PokemonsService.getPokeByLastPage(this.pokes.length)
       let pokemon = this.pokes
       this.pokes = response.results
@@ -116,7 +120,10 @@ export class PokedexComponent implements OnInit {
       pokemon = pokemon.concat(pokemonAfter)
       this.pokes = pokemon
       this.filteredPokes = this.pokes;
-      console.log(this.pokes.length )
+      console.log(this.pokes.length)
     }
+  }
+  goToPokePage(id: any) {
+    this.router.navigate(['/pokemons/' + id]);
   }
 }

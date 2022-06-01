@@ -7,11 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { PagePokeComponent } from './page-poke/page-poke.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokedexComponent
+    PokedexComponent,
+    PagePokeComponent
   ],
   imports: [
     BrowserModule,

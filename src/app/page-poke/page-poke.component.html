@@ -1,0 +1,13 @@
+<div class="container">
+    <div>
+        <button (click)="nextPoke(poke.id)">></button><br>
+        <button (click)="previousPoke(poke.id)"><</button>
+        <h2>{{poke.name}}</h2>
+        <img [attr.src]="getImgUrl(poke.id)" alt="{{poke.name}}">
+        <div *ngFor="let type of poke.types">
+            <p>{{type.type.name}}</p>
+        </div>
+        <p>{{poke.height}}</p>
+        <p>{{poke.weight}}</p>
+    </div>
+</div>

@@ -20,4 +20,7 @@ export class PokemonsService {
   async getPokeByLastPage(id:number){
     return await this.http.get<any>(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${id}`).toPromise();
   }
+  async getPokeByID(id:number){
+    return await this.http.get<any>(`https://pokeapi.co/api/v2/pokemon/${id}`).toPromise();
+  }
 }

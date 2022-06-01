@@ -5,7 +5,7 @@
     </div>
     <div infiniteScroll [infiniteScrollDistance]="0" (scrolled)="onScroll()">
         <div class="col-md-12 row">
-            <div *ngFor="let pokemon of filteredPokes" class="cards">
+            <div *ngFor="let pokemon of filteredPokes" class="cards" (click)="goToPokePage(pokemon?.details?.id)">
                 <div class="img">
                     <img [attr.src]="getImgUrl(pokemon?.details?.id)" alt="{{pokemon?.name}}">
                 </div>
